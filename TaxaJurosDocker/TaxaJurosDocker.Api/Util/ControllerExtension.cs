@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TaxaJurosDocker.Application.Util;
+﻿using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc;
 using TaxaJurosDocker.BaseApi.Models;
+using TaxaJurosDocker.Application.Util;
 
 namespace TaxaJurosDocker.Api.Util
 {
@@ -11,7 +12,7 @@ namespace TaxaJurosDocker.Api.Util
             if (notifier.AnyNotification())
                 return controller.BadRequest(new BadRequestDefaultModel(notifier.GetMessageNotifications()));
 
-            return controller.Ok(new SuccessRequestResponseDefault<T>(ConvertObject<T>(response)));
+            return controller.Ok(JsonConvert.SerializeObject(new SuccessRequestResponseDefault<T>(ConvertObject<T>(response))));
         }
 
         private static I ConvertObject<I>(object response)
@@ -27,7 +28,6 @@ namespace TaxaJurosDocker.Api.Util
             {
                 throw;
             }
-        }
-
+        } 
     }
 }

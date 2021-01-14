@@ -1,22 +1,24 @@
+using System;
+using System.IO;
+using Newtonsoft.Json;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using TaxaJurosDocker.BaseApi.Util;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using Microsoft.AspNetCore.Diagnostics;
-using System.Text.Json;
-using Microsoft.AspNetCore.Http;
 using TaxaJurosDocker.BaseApi.Models;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Extensions.Configuration;
 using TaxaJurosDocker.DependencyInjection;
-using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TaxaJurosDocker.Api
 {
     public class Startup
     {
-        public Startup() => Configuration = BuildConfiguration();        
+        public Startup() => Configuration = BuildConfiguration();
 
         public IConfigurationRoot BuildConfiguration()
         {
@@ -36,6 +38,11 @@ namespace TaxaJurosDocker.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+            {
+                Converters = new List<JsonConverter> { new DecimalFormatConverter() }
+            };
 
             services.AddSwaggerGen(c =>
             {
@@ -62,7 +69,7 @@ namespace TaxaJurosDocker.Api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();            
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
@@ -88,11 +95,13 @@ namespace TaxaJurosDocker.Api
                     context.Response.StatusCode = 500;
                     context.Response.ContentType = "application/json; charset=utf-8";
 
-                    var jsonStringResposta = JsonSerializer.Serialize(erroServidorRespostaPadrao);
+                    var jsonStringResposta = JsonConvert.SerializeObject(erroServidorRespostaPadrao);
 
                     await context.Response.WriteAsync(jsonStringResposta);
                 });
             });
         }
     }
+
+    
 }
