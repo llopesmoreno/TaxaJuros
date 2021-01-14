@@ -9,13 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Tests", "3.Tests", "{F5ADFA00-FDCE-4138-9DFD-7E9DEBAD6B0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.Api", "TaxaJurosDocker.Api\TaxaJurosDocker.Api.csproj", "{94A07FD1-F082-4162-B4F6-238E25D84EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.Api", "TaxaJurosDocker.Api\TaxaJurosDocker.Api.csproj", "{94A07FD1-F082-4162-B4F6-238E25D84EE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.ResourcesApi", "TaxaJurosDocker.ResourcesApi\TaxaJurosDocker.ResourcesApi.csproj", "{45EE2770-36FE-4AFF-8653-BF746B27A45F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.ResourcesApi", "TaxaJurosDocker.ResourcesApi\TaxaJurosDocker.ResourcesApi.csproj", "{45EE2770-36FE-4AFF-8653-BF746B27A45F}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1291B2B5-DF7D-4F4B-8E77-A755AB6CDBE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.BaseApi", "TaxaJurosDocker.BaseApi\TaxaJurosDocker.BaseApi.csproj", "{724D206F-3717-4D44-92C6-E70120CF8317}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.BaseApi", "TaxaJurosDocker.BaseApi\TaxaJurosDocker.BaseApi.csproj", "{724D206F-3717-4D44-92C6-E70120CF8317}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.Application", "..\TaxaJurosDocker.Application\TaxaJurosDocker.Application.csproj", "{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.SolutionHelpers", "4.SolutionHelpers", "{6C34A973-E11E-4623-A682-B755A6FEC3BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.Helpers", "..\TaxaJurosDocker.Helpers\TaxaJurosDocker.Helpers.csproj", "{7C70066B-A51C-4639-A855-39C500CF156C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.DependencyInjection", "..\TaxaJurosDocker.DependencyInjection\TaxaJurosDocker.DependencyInjection.csproj", "{9961CB03-6E4B-437B-B6FD-F37CF34F949D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,18 @@ Global
 		{724D206F-3717-4D44-92C6-E70120CF8317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{724D206F-3717-4D44-92C6-E70120CF8317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{724D206F-3717-4D44-92C6-E70120CF8317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C70066B-A51C-4639-A855-39C500CF156C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C70066B-A51C-4639-A855-39C500CF156C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C70066B-A51C-4639-A855-39C500CF156C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C70066B-A51C-4639-A855-39C500CF156C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +67,9 @@ Global
 		{94A07FD1-F082-4162-B4F6-238E25D84EE7} = {6DE932C3-7E31-4246-BCED-DB5B903AF60C}
 		{45EE2770-36FE-4AFF-8653-BF746B27A45F} = {6DE932C3-7E31-4246-BCED-DB5B903AF60C}
 		{724D206F-3717-4D44-92C6-E70120CF8317} = {6DE932C3-7E31-4246-BCED-DB5B903AF60C}
+		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F} = {06B49948-7D2E-4ACF-A2F7-CB4708CAD48B}
+		{7C70066B-A51C-4639-A855-39C500CF156C} = {6C34A973-E11E-4623-A682-B755A6FEC3BA}
+		{9961CB03-6E4B-437B-B6FD-F37CF34F949D} = {6C34A973-E11E-4623-A682-B755A6FEC3BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D52DC7E6-3FB4-4662-A1BA-7C87BFFB50BB}

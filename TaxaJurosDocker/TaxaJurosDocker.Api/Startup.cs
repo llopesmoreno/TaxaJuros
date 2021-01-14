@@ -1,30 +1,49 @@
+using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
+using Microsoft.AspNetCore.Http;
+using TaxaJurosDocker.BaseApi.Models;
+using TaxaJurosDocker.DependencyInjection;
+using System.IO;
 
 namespace TaxaJurosDocker.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup() => Configuration = BuildConfiguration();        
+
+        public IConfigurationRoot BuildConfiguration()
         {
-            Configuration = configuration;
+            var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+            var config = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddEnvironmentVariables()
+           .AddJsonFile("appsettings.json", false)
+           .AddJsonFile($"appsettings.{env}.json", true);
+
+            return config.Build();
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfigurationRoot Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaxaJurosDocker Api", Version = "v1" });
+                c.IncludeXmlComments("TaxaJurosDocker.Api.xml");
+            });
+
+            services.RegisterServices(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -32,7 +51,14 @@ namespace TaxaJurosDocker.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("../swagger/v1/swagger.json", "TaxaJurosDocker Api V1");
+                });
             }
+
+            ImplementEvents(app, env);
 
             app.UseHttpsRedirection();
 
@@ -41,6 +67,31 @@ namespace TaxaJurosDocker.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+        }
+
+        private void ImplementEvents(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseExceptionHandler(handler =>
+            {
+                handler.Run(async context =>
+                {
+                    var exception = context.Features.Get<IExceptionHandlerFeature>();
+
+                    if (exception != null)
+                    {
+                        //se desejar gravar um log da exception, pode configurar o serilog e gravar como abaixo
+                        //logger.LogError(500, "mensagem: {mesagem} trace: {result}, protocolo: {protocolo}", exception.Error.Message, exception.Error.StackTrace, erroServidorRespostaPadrao.Protocolo);
+                    }
+
+                    var erroServidorRespostaPadrao = new InternalServerErrorDefaultModel();
+                    context.Response.StatusCode = 500;
+                    context.Response.ContentType = "application/json; charset=utf-8";
+
+                    var jsonStringResposta = JsonSerializer.Serialize(erroServidorRespostaPadrao);
+
+                    await context.Response.WriteAsync(jsonStringResposta);
+                });
             });
         }
     }

@@ -10,3 +10,16 @@
 /TaxaJurosDocker/TaxaJurosDocker.BaseApi/bin/Debug/netcoreapp3.1
 /TaxaJurosDocker/TaxaJurosDocker.BaseApi/obj
 /TaxaJurosDocker/TaxaJurosDocker.ResourcesApi/bin/Debug/netcoreapp3.1
+/TaxaJuros.Application/bin/Debug/netcoreapp3.1
+/TaxaJuros.Application/obj/Debug/netcoreapp3.1
+/TaxaJuros.Application/obj
+/TaxaJuros.DependencyInjection/bin/Debug/netcoreapp3.1
+/TaxaJuros.DependencyInjection/obj
+/TaxaJuros.Helpers/bin/Debug/netcoreapp3.1
+/TaxaJuros.Helpers/obj
+/TaxaJurosDocker.Application/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker.Application/obj
+/TaxaJurosDocker.DependencyInjection/obj
+/TaxaJurosDocker.DependencyInjection/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker.Helpers/obj
+/TaxaJurosDocker.Helpers/bin/Debug/netcoreapp3.1

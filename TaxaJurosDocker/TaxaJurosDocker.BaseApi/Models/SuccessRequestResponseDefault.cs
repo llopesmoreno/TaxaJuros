@@ -2,9 +2,9 @@
 {
     public class SuccessRequestResponseDefault<T>
     {
-        public SuccessRequestResponseDefault(bool valid, T data)
+        public SuccessRequestResponseDefault(T data)
         {
-            Valid = valid;
+            Valid = true;
             Data = data;
         }
 

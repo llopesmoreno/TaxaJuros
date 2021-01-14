@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TaxaJurosDocker.Application\TaxaJurosDocker.Application.csproj" />
+    <ProjectReference Include="..\..\TaxaJurosDocker.DependencyInjection\TaxaJurosDocker.DependencyInjection.csproj" />
     <ProjectReference Include="..\TaxaJurosDocker.BaseApi\TaxaJurosDocker.BaseApi.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using MediatR;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using TaxaJurosDocker.Api.Util;
+using TaxaJurosDocker.BaseApi.Models;
+using TaxaJurosDocker.Application.Util;
+using TaxaJurosDocker.Application.CalculoJuros;
 
 namespace TaxaJurosDocker.Api.Controllers
 {
@@ -9,16 +12,23 @@ namespace TaxaJurosDocker.Api.Controllers
     [Route("[controller]")]
     public class CalculaJurosController : ControllerBase
     {
+        private readonly INotifier _notifier;
+        private readonly IMediator _mediator;
+
+        public CalculaJurosController(INotifier notifier, IMediator mediador)
+        {
+            _notifier = notifier;
+            _mediator = mediador;
+        }
+
         [HttpGet]
+        [ProducesResponseType(typeof(SuccessRequestResponseDefault<decimal>), 200)]
+        [ProducesResponseType(typeof(BadRequestDefaultModel), 400)]
+        [ProducesResponseType(typeof(InternalServerErrorDefaultModel), 500)]
         public async Task<IActionResult> Get(decimal valorinicial, int meses)
         {
-            using var client = new System.Net.Http.HttpClient();
-            var request = new System.Net.Http.HttpRequestMessage
-            {
-                RequestUri = new Uri("http://taxajurosdocker.resourcesapi/taxajuros") // ASP.NET 3 (VS 2019 only)            
-            };
-            var response = await client.SendAsync(request);
-            return Ok(await response.Content.ReadAsStringAsync());
+            var request = new CalculoJurosRequest(valorinicial, meses);
+            return this.GetResponse<CalculoJurosResponse>(_notifier, await _mediator.Send(request));
         }
     }
 }
