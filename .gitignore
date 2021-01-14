@@ -5,3 +5,8 @@
 /TaxaJurosDocker/TaxaJurosDocker.Api/bin/Debug/netcoreapp3.1
 /TaxaJurosDocker/TaxaJurosDocker.Api/obj
 /TaxaJurosDocker/TaxaJurosDocker.ResourcesApi/obj
+/TaxaJurosDocker/bin/Debug
+/TaxaJurosDocker/obj
+/TaxaJurosDocker/TaxaJurosDocker.BaseApi/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker/TaxaJurosDocker.BaseApi/obj
+/TaxaJurosDocker/TaxaJurosDocker.ResourcesApi/bin/Debug/netcoreapp3.1

@@ -10,7 +10,6 @@ WORKDIR /src
 COPY ["TaxaJurosDocker.Api/TaxaJurosDocker.Api.csproj", "TaxaJurosDocker.Api/"]
 RUN dotnet restore "TaxaJurosDocker.Api/TaxaJurosDocker.Api.csproj"
 COPY . .
-COPY []
 WORKDIR "/src/TaxaJurosDocker.Api"
 RUN dotnet build "TaxaJurosDocker.Api.csproj" -c Release -o /app/build
 

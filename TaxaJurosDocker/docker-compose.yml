@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  taxajurosdocker.api:
+    image: ${DOCKER_REGISTRY-}taxajurosdockerapi
+    build:
+      context: .
+      dockerfile: TaxaJurosDocker.Api/Dockerfile
+
+  taxajurosdocker.resourcesapi:
+    image: ${DOCKER_REGISTRY-}taxajurosdockerresourcesapi
+    build:
+      context: .
+      dockerfile: TaxaJurosDocker.ResourcesApi/Dockerfile
+
