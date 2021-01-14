@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TaxaJurosDocker/TaxaJurosDocker.Api/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker/TaxaJurosDocker.Api/obj
+/TaxaJurosDocker/TaxaJurosDocker.ResourcesApi/obj

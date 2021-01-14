@@ -3,9 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Host", "1.Host", "{6DE932C3-7E31-4246-BCED-DB5B903AF60C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{06B49948-7D2E-4ACF-A2F7-CB4708CAD48B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Tests", "3.Tests", "{F5ADFA00-FDCE-4138-9DFD-7E9DEBAD6B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.Api", "TaxaJurosDocker.Api\TaxaJurosDocker.Api.csproj", "{1CA59137-D687-4B7D-8082-91BDC9950B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.ResourcesApi", "TaxaJurosDocker.ResourcesApi\TaxaJurosDocker.ResourcesApi.csproj", "{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA59137-D687-4B7D-8082-91BDC9950B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA59137-D687-4B7D-8082-91BDC9950B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA59137-D687-4B7D-8082-91BDC9950B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA59137-D687-4B7D-8082-91BDC9950B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1CA59137-D687-4B7D-8082-91BDC9950B66} = {6DE932C3-7E31-4246-BCED-DB5B903AF60C}
+		{289B8EDF-59C5-4E08-A3B8-EDDBE6AE9C65} = {6DE932C3-7E31-4246-BCED-DB5B903AF60C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D52DC7E6-3FB4-4662-A1BA-7C87BFFB50BB}
