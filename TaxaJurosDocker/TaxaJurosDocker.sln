@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.Helpers", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxaJurosDocker.DependencyInjection", "..\TaxaJurosDocker.DependencyInjection\TaxaJurosDocker.DependencyInjection.csproj", "{9961CB03-6E4B-437B-B6FD-F37CF34F949D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxaJurosDocker.Application.Tests", "..\TaxaJurosDocker.Application.Tests\TaxaJurosDocker.Application.Tests.csproj", "{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9961CB03-6E4B-437B-B6FD-F37CF34F949D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{1E5EA6A8-A55D-4800-A74C-ABEB40BD233F} = {06B49948-7D2E-4ACF-A2F7-CB4708CAD48B}
 		{7C70066B-A51C-4639-A855-39C500CF156C} = {6C34A973-E11E-4623-A682-B755A6FEC3BA}
 		{9961CB03-6E4B-437B-B6FD-F37CF34F949D} = {6C34A973-E11E-4623-A682-B755A6FEC3BA}
+		{4ABF2E38-DA44-45C5-81AF-A14DBF988BA4} = {F5ADFA00-FDCE-4138-9DFD-7E9DEBAD6B0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D52DC7E6-3FB4-4662-A1BA-7C87BFFB50BB}

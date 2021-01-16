@@ -23,3 +23,5 @@
 /TaxaJurosDocker.DependencyInjection/bin/Debug/netcoreapp3.1
 /TaxaJurosDocker.Helpers/obj
 /TaxaJurosDocker.Helpers/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker.Application.Tests/bin/Debug/netcoreapp3.1
+/TaxaJurosDocker.Application.Tests/obj
