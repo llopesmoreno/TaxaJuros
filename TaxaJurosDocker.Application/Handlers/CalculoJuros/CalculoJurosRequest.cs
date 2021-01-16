@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace TaxaJurosDocker.Application.CalculoJuros
+namespace TaxaJurosDocker.Application.Handlers.CalculoJuros
 {
     public class CalculoJurosRequest : IRequest<CalculoJurosResponse>
     {
@@ -9,13 +9,13 @@ namespace TaxaJurosDocker.Application.CalculoJuros
 
         }
 
-        public CalculoJurosRequest(decimal valor, int meses)
+        public CalculoJurosRequest(decimal valorInicial, int meses)
         {
-            Valor = valor;
+            ValorInicial = valorInicial;
             Meses = meses;
         }
 
-        public decimal Valor { get; set; }
+        public decimal ValorInicial { get; set; }
         public int Meses { get; set; }
     }
 }

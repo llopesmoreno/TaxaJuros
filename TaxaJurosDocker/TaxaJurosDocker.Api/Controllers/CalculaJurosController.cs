@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TaxaJurosDocker.Api.Util;
 using TaxaJurosDocker.BaseApi.Models;
 using TaxaJurosDocker.Application.Util;
-using TaxaJurosDocker.Application.CalculoJuros;
+using TaxaJurosDocker.Application.Handlers.CalculoJuros;
 
 namespace TaxaJurosDocker.Api.Controllers
 {

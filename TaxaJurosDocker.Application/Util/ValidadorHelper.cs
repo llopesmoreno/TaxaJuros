@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using FluentValidation;
 using System.Collections.Generic;
-using TaxaJurosDocker.Application.Util;
 
-namespace LIWEB.Domain.Util
+namespace TaxaJurosDocker.Application.Util
 {
     public static class ValidadorHelper
     {
@@ -19,7 +17,7 @@ namespace LIWEB.Domain.Util
             var result = validator.Validate(obj);
 
             if (result.IsValid)
-                return true;
+                return false;
 
             notificador.Add(result.Errors);
 

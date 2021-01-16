@@ -7,9 +7,9 @@ namespace TaxaJurosDocker.ResourcesApi.Controllers
     public class TaxaJurosController : ControllerBase
     {
         [HttpGet]
-        public decimal Get()
+        public double Get()
         {
-            return 0.01m;
+            return 0.01d;
         }
     }
 }
