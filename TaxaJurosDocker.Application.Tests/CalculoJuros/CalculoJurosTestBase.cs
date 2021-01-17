@@ -36,7 +36,7 @@ namespace TaxaJurosDocker.Application.Tests.CalculoJuros
             return serviceCollection.BuildServiceProvider();            
         }
 
-        internal void PreparaHttpServices()
+        protected void PreparaHttpServices()
         {
             TaxaJurosHttpService.Setup(s => s.GetTaxa()).ReturnsAsync(0.01);
         }

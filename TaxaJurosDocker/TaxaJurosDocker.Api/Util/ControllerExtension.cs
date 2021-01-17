@@ -15,6 +15,8 @@ namespace TaxaJurosDocker.Api.Util
             return controller.Ok(JsonConvert.SerializeObject(new SuccessRequestResponseDefault<T>(ConvertObject<T>(response))));
         }
 
+        public static ActionResult GetResponse<T>(this ControllerBase controller, object response = null) => controller.Ok(JsonConvert.SerializeObject(new SuccessRequestResponseDefault<T>(ConvertObject<T>(response))));
+        
         private static I ConvertObject<I>(object response)
         {
             if (response is I i)
